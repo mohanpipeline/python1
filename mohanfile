@@ -61,7 +61,7 @@ pipeline {
             steps {
                 dir("source/src"){
                     sh '''
-                     docker build -t mohan:1.0 .
+                     docker build -t mohan:4.0 .
                     '''
             }
             }
@@ -69,7 +69,7 @@ pipeline {
         stage("Starting the Docker Container") {
             steps {
                 sh '''
-                docker run -d -p 8000:8000 mohan:1.0
+                docker run -d -p 8000:8000 mohan:4.0
                 '''
             }
             
@@ -78,7 +78,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com',"docker_credentials") {  // here we need to install the docker pipeline plugin to this
-                        docker.image("mohan:1.0").push()
+                        docker.image("mohan:4.0").push()
                     }
                 }
             }
