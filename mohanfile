@@ -26,6 +26,14 @@ pipeline {
                 sh 'ls -l'
             }
         }
+
+        stage("perform the trivy"){
+            steps{
+                dir('source/src'){
+                    sh 'tricy fs . > trivy.txt'
+                }
+            }
+        }
         // stage("Performing the Test Cases") {
         //     steps {
         //         sh '''
