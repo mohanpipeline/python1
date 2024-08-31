@@ -18,7 +18,7 @@ pipeline {
             steps{
                 sh'''
                 ls  -l
-                pytest python-testing/tests'''
+                pytest tests'''
             }
         }
         stage("perform the unit testing"){
