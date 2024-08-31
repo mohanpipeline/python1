@@ -70,6 +70,7 @@ pipeline {
             steps {
                 sh '''
                 docker run -d -p 8000:8000 mohan:4.0
+                docker tag mohan:4.0 mohan14242/mohan:4.0
                 '''
             }
             
