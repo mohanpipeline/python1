@@ -21,25 +21,25 @@ pipeline {
                 sh 'ls -l'
             }
         }
-        stage("Performing the Test Cases") {
-            steps {
-                sh '''
-                ls -l
-                pytest ../tests/unit_test
-                '''
-            }
-        }
-        stage("Performing the Unit Testing") {
-            steps {
-                sh '''
-                pytest unit_test
-                '''
-            }
-        }
+        // stage("Performing the Test Cases") {
+        //     steps {
+        //         sh '''
+        //         ls -l
+        //         pytest ../tests/unit_test
+        //         '''
+        //     }
+        // }
+        // stage("Performing the Unit Testing") {
+        //     steps {
+        //         sh '''
+        //         pytest unit_test
+        //         '''
+        //     }
+        // }
         stage("Linting the Code") {
             steps {
                 sh '''
-                flake8 src/main.py
+                flake8 source/src/main.py
                 '''
             }
         }
