@@ -24,7 +24,7 @@ pipeline {
         stage("perform the unit testing"){
             steps{
                 sh '''
-                pytest python-testing/unit_test'''
+                pytest unit_test'''
             }
         }
         stage("perform the linting the code"){
