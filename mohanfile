@@ -54,19 +54,21 @@ pipeline {
         }
         stage("Docker Build Stage") {
             steps {
+                dir("source"){
                 sh '''
                 docker build -t mohan:1.0 .
                 '''
             }
+            }
         }
         stage("Starting the Docker Container") {
             steps {
-                dir("source"){
+                
                 sh '''
                 docker run -d -p 8000:8000 mohan:1.0
                 '''
             }
-            }
+            
         }
     }
 }
