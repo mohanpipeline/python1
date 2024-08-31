@@ -74,6 +74,11 @@ pipeline {
             }
             }
         }
+        stage("perform the linting "){
+            steps{
+                sh'trivy image mohan:4.0 > trivyimage.txt'
+            }
+        }
         stage("Starting the Docker Container") {
             steps {
                 sh '''
