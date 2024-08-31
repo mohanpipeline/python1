@@ -2,7 +2,7 @@ pipeline {
     agent any
  
     stages {
-         stage("clonign the coee"){
+        stage("clonign the coee"){
             steps{
                 git branch: 'main',url:"https://github.com/mohansourcecode/python1.git"
     
