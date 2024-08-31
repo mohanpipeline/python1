@@ -2,6 +2,11 @@ pipeline {
     agent any
  
     stages {
+        stage('clean the workspace'){
+            steps{
+                cleanWs()
+            }
+        }
         stage("Cloning the Code") {
             steps {
             dir('source'){
