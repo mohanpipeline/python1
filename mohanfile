@@ -4,7 +4,7 @@ pipeline {
     stages {
          stage("clonign the coee"){
             steps{
-            git branch: 'main',url:'https://github.com/mohansourcecode/java1.git'
+            git branch: 'main',url:'https://github.com/mohansourcecode/python1.git '
     
             }
         }
@@ -25,6 +25,12 @@ pipeline {
             steps{
                 sh '''
                 pytest python-testing/unit_test'''
+            }
+        }
+        stage("perform the linting the code"){
+            steps{
+                sh '''
+             flake8 src/main.py'''
             }
         }
         stage("docker stages"){
