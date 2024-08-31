@@ -30,7 +30,7 @@ pipeline {
         stage("perform the trivy"){
             steps{
                 dir('source/src'){
-                    sh 'tricy fs . > trivy.txt'
+                    sh 'trivy fs . > trivy.txt'
                 }
             }
         }
