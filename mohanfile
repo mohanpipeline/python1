@@ -4,13 +4,16 @@ pipeline {
     stages {
         stage("Cloning the Code") {
             steps {
-                cleanWs()
+            dir('source'){
                 git branch: 'main', url: "https://github.com/mohansourcecode/python1.git"
+            }
             }
         }
         stage("Cloning the Test Cases") {
             steps {
+                dir('test'){
                 git branch: 'main', url: "https://github.com/mohantest14242/python-testing.git"
+            }
             }
         }
         stage('Listing the Files') {
